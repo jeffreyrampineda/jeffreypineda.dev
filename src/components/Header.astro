@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 
+const { class: className } = Astro.props;
+
 const navigation = [
   { name: 'Home', href: '/#' },
   { name: 'Projects', href: '/#projects' },
@@ -9,7 +11,7 @@ const navigation = [
 ];
 ---
 
-<header class="absolute inset-x-0 top-0 z-50">
+<header class:list={['inset-x-0 top-0 z-50', className]}>
   <nav
     class="container mx-auto p-3 md:p-6 xl:px-32 flex items-center justify-between"
     aria-label="Global"
@@ -72,7 +74,7 @@ const navigation = [
           navigation.map((item) => (
             <a
               href={item.href}
-              class="block rounded-lg py-4 w-full text-center hover:bg-primary"
+              class="block rounded-md py-4 w-full text-center hover:bg-primary"
             >
               {item.name}
             </a>
