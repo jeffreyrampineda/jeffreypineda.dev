@@ -1,9 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
@@ -14,15 +15,15 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
     <main class="bg-gray-200 text-black py-8 md:py-16">
       <section
-        class="container mx-auto px-3 md:px-6 xl:px-32 text-primary font-extralight"
+        class="container max-w-6xl mx-auto px-3 md:px-6 text-primary font-extralight"
       >
-        <h1 class="text-3xl md:text-5xl mb-8">Blog</h1>
+        <h1 class="text-4xl md:text-5xl mb-8">Blog</h1>
         <ul class="grid grid-cols-1 md:grid-cols-4 gap-4">
           {
             posts.map((post) => (
@@ -31,9 +32,15 @@ const posts = (await getCollection('blog')).sort(
                   href={`/blog/${post.slug}/`}
                   class="hover-scale block p-4 border-gray-500 border rounded-md"
                 >
-                  <p class="text-sm">
+                  <div class="text-sm flex justify-between">
                     <FormattedDate date={post.data.pubDate} />
-                  </p>
+                    <Image
+                      src="/assets/icons/icon_arrow-sm-right.svg"
+                      alt="expand"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
                   <h4 class="font-semibold py-2">{post.data.title}</h4>
                   <p class="text-sm">{post.data.description}</p>
                 </a>
