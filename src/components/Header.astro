@@ -99,5 +99,13 @@ const navigation = [
     menuClose?.addEventListener('click', () => {
       menu?.classList.add('hidden');
     });
+
+    // Close the menu when a nav link is clicked
+    const navLinks = menu?.querySelectorAll('a');
+    navLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        menu?.classList.add('hidden');
+      });
+    });
   });
 </script>
