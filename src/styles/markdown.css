@@ -41,3 +41,7 @@
 .markdown img {
   @apply my-4 rounded;
 }
+
+.markdown strong {
+  @apply font-bold text-gray-900;
+}
