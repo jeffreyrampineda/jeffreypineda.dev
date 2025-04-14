@@ -1,12 +1,15 @@
-# Jeffrey Ram Pineda
+# [jeffreypineda.dev](https://jeffreypineda.dev)
 
-This repo contains the source code powering [https://jeffreyram.pineda.org/](https://https://jeffreyram.pineda.org/)
+This repo contains the source code powering [https://jeffreypineda.dev/](https://jeffreypineda.dev/)
 
-## Getting Started
+## Overview
 
-### Prerequisites
+This project utilizes several cutting-edge technologies to build a modern website:
 
-- Install [Node.js] which includes [Node Package Manager][npm]
+- **Package Manager**: [NPM](https://www.npmjs.com/)
+- **Framework**: [Astro](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Deployment**: [Netlify](https://www.netlify.com/)
 
 ## 🚀 Project Structure
 
